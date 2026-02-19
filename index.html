@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delícias da Lolô | Catálogo Digital</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ff85a2">
+    
+    <link rel="apple-touch-icon" href="icone.png">
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <h1>Delícias da Lolô</h1>
+            <p>Doces Artesanais feitos com carinho</p>
+        </div>
+    </header>
+
+    <main id="catalogo" class="vitrine">
+        <div class="carregando">Carregando delícias...</div>
+    </main>
+
+    <section id="carrinho-fixo">
+        <div class="resumo">
+            <span id="contador">0 itens</span>
+            <span id="total">Total: R$ 0,00</span>
+        </div>
+        <button class="btn-whatsapp" onclick="enviarPedido()">
+            Enviar Pedido via WhatsApp
+        </button>
+    </section>
+
+    <script src="script.js"></script>
+    
+    <script>
+        // Este pequeno código registra o seu site para funcionar SEM INTERNET
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                .then(reg => console.log('Modo offline pronto!', reg))
+                .catch(err => console.log('Erro no offline:', err));
+            });
+        }
+    </script>
+
+</body>
+</html>
